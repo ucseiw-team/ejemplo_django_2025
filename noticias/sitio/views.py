@@ -12,6 +12,4 @@ def inicio(request):
 
     noticias = Noticia.objects.filter(archivada=False)
 
-    a = 1 / 0
-
     return render(request, 'inicio.html', {'lista_noticias': noticias, 'otra': asdasd, "algo_mas": 123})
