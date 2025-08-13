@@ -12,4 +12,4 @@ def inicio(request):
 
     noticias = Noticia.objects.filter(archivada=False)
 
-    return render(request, 'inicio.html', {'lista_noticias': noticias, 'otra': asdasd, "algo_mas": 123})
+    return render(request, 'inicio.html', {'lista_noticias': noticias})
