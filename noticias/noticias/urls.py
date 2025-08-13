@@ -21,5 +21,6 @@ from sitio import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('inicio/', views.inicio),
+    path('inicio/', views.inicio, name="inicio"),
+    path('ejemplo_form/', views.ejemplo_form),
 ]
