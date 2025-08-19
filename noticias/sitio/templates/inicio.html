@@ -1,10 +1,19 @@
-<h1>noticias.com</h1>
-<p>bienvenido!</p>
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'sitio/css/styles.css' %}">
+</head>
+
+<body>
+
+    <h1>noticias.com</h1>
+    <p>bienvenido!</p>
 
 
-{% for noticia in lista_noticias %}
-    <h3>{{ noticia.fecha }} {{ noticia.titulo }}</h3>
-    <p>{{ noticia.texto }}</p>
-{% endfor %}
+    {% for noticia in lista_noticias %}
+        <h3>{{ noticia.fecha }} {{ noticia.titulo }}</h3>
+        <p>{{ noticia.texto }}</p>
+    {% endfor %}
 
-
+</body>
+</html>
