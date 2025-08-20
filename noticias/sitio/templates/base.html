@@ -1,0 +1,19 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'sitio/css/styles.css' %}">
+</head>
+
+<body>
+
+    <h1>noticias.com</h1>
+    <p>{% block subtitulo %}bienvenido!{% endblock %}</p>
+
+    <div>
+        {% block contenido %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>
+

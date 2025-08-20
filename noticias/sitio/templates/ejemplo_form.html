@@ -1,8 +1,19 @@
-<form method="POST" action=".">
+{% extends "base.html" %}
 
-    {% csrf_token %}
+{% block subtitulo %}Ejemplo Form{% endblock %}
 
-    {{ form.as_p }}
+{% block contenido %}
 
-    <input type="submit" value="Enviar" />
-</form>
+    <form method="POST" action=".">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <input type="submit" value="Enviar" />
+    </form>
+
+    {% include "datos_usuario.html" with nombre="fisa" %}
+    {% include "datos_usuario.html" with nombre="sofi" %}
+
+{% endblock %}
