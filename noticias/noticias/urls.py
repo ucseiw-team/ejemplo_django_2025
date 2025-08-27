@@ -22,5 +22,7 @@ from sitio import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('inicio/', views.inicio, name="inicio"),
+    path('pedacito_noticias/', views.pedacito_noticias, name="pedacito_noticias"),
+    path('pedacito_noticias_json/', views.pedacito_noticias_json, name="pedacito_noticias_json"),
     path('ejemplo_form/', views.ejemplo_form),
 ]

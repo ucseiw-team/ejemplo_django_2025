@@ -3,8 +3,12 @@
 {% block subtitulo %}Bienvenido a Noticias.com{% endblock %}
 
 {% block contenido %}
-    {% for noticia in lista_noticias %}
-        <h3>{{ noticia.fecha|date:"d M" }} {{ noticia.titulo }}</h3>
-        <p>{{ noticia.texto }}</p>
-    {% endfor %}
+
+    <p>
+    <button hx-get="/pedacito_noticias/" hx-target="#pedacito-noticias">Actualizar</button>
+    </p>
+
+    <div id="pedacito-noticias" hx-get="/pedacito_noticias/" hx-trigger="load, every 60s">
+    </div>
+
 {% endblock %}

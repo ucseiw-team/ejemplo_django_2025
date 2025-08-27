@@ -1,6 +1,7 @@
 from datetime import datetime
 
 from django.shortcuts import render, redirect
+from django.http import JsonResponse
 
 from sitio.models import Noticia
 from sitio.forms import ContactForm
@@ -36,3 +37,20 @@ def ejemplo_form(request):
         form = ContactForm()
 
     return render(request, 'ejemplo_form.html', {'form': form})
+
+
+def pedacito_noticias(request):
+    noticias = Noticia.objects.filter(archivada=False).order_by('-fecha')[:5]
+    return render(request, 'pedacito_noticias.html', {'lista_noticias': noticias})
+
+
+def pedacito_noticias_json(request):
+    noticias = Noticia.objects.filter(archivada=False).order_by('-fecha')[:5]
+    respuesta = []
+    for noticia in noticias:
+        respuesta.append({
+            'titulo': noticia.titulo,
+            'texto': noticia.texto,
+            'fecha': str(noticia.fecha),
+        })
+    return JsonResponse({"noticias": respuesta}, safe=False)
